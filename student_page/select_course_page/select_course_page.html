@@ -1,0 +1,115 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>選課系統</title>
+    </head>
+    <body>
+        <nav>
+
+            <a href="/home_page/home_page.html">
+              <div class="logoFrame">
+                <i class="fa-solid fa-building-columns"></i>
+                <h2 class="navTitle">University of Nullpointerexception</h2>
+              </div>
+            </a>
+    
+            <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+                </ol>
+            </div>
+    
+        </nav>
+
+        <div class="Frame">
+
+            <div class="rounded-4 infoFrame">
+
+              <div class="titleAndSearch">
+                <h2 class="infoTitle">課程一覽</h2>
+                <div class="searchFrame">
+                  <label for="search">以名稱搜尋</label>
+                  <div class="inputFrame">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" name="search" id="search" class="input rounded-3 border-0 p-1 ps-4 search">
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordionFrame">
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Accordion Item #2
+                      </button>
+                    </h2>
+                    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Accordion Item #3
+                      </button>
+                    </h2>
+                    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                          Accordion Item #4
+                        </button>
+                      </h2>
+                      <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                      </div>
+                  </div>
+                  
+                </div> <!--accordionEnd-->
+
+              </div> <!--frameEnd-->
+
+            </div>
+
+            <div class="rounded-4 selectCourseFrame">
+                <h2 class="selectTitle">選課列表</h2>
+                <div class="card mb-2 ms-auto me-auto p-2  pe-5 rounded-3 text-center selectCourse1">0000 Course<button class="ps-1 pe-1 remove" id="remove">移除</button></div>
+                <div class="card mb-2 ms-auto me-auto p-2
+                pe-5 rounded-3 text-center selectCourse2">0001 Course<button class="ps-1 pe-1 remove" id="remove">移除</button></div>
+                <div class="card mb-2 ms-auto me-auto p-2  pe-5 rounded-3 text-center selectCourse3">0002 Course<button class="ps-1 pe-1 remove" id="remove">移除</button></div>
+                <button class="commitSelect" id="commitSelect">送出選課</button>
+            </div>
+
+            <div class="BtnFrame">
+                <button class="backBtn" id="backBtn">回學生首頁</button>
+            </div>
+
+        </div>
+
+        <!-- bootstrap手風琴需要引用bootstrap的js套件 -->
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+    </html>

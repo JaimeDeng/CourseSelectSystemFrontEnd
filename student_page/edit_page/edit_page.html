@@ -1,0 +1,62 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>學生資訊</title>
+    </head>
+    <body>
+        <nav>
+
+            <a href="/home_page/home_page.html">
+                <div class="logoFrame">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <h2 class="navTitle">University of Nullpointerexception</h2>
+                </div>
+            </a>
+    
+            <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+                </ol>
+            </div>
+    
+        </nav>
+
+        <div class="Frame">
+
+            <div class="changePwdFrame" id="changePwdFrame">
+                <div class="inputFrame">
+                    <label for="newPwd">新密碼</label>
+                    <div class="newPwdFrame">
+                        <input type="text" class="rounded-3 border-0 p-2 pe-5 newPwd" id="newPwd" placeholder="請輸入新密碼" required>
+                        <i class="fa-regular fa-circle-question question"></i>
+                    </div>
+                    <label for="repeatNewPwd">再次輸入密碼</label>
+                    <input type="text" class="rounded-3 border-0 p-2 repeatNewPwd" id="repeatNewPwd" placeholder="請再次輸入密碼" required>
+                </div>
+                <div class="btnFrame">
+                    <button class="commitBtn" id="commitBtn">確認變更</button>
+                    <button class="cancelBtn" id="cancelBtn">返回</button>
+                </div>
+            </div>
+
+            <div class="infoFrame">
+                <h2>學號: </h2><h2 class="studentId" id="studentId">none</h2><br>
+                <h2>姓名: </h2><h2 class="name" id="name">none</h2><br>
+                <h2>學分: </h2><h2 class="credit" id="credit">none</h2><br>
+            </div>
+
+            <div class="outerBtnFrame">
+                <button class="backBtn" id="backBtn">回學生首頁</button>
+                <button class="editBtn" id="editBtn">變更密碼</button>
+            </div>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+    </html>

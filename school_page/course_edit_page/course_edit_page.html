@@ -1,0 +1,158 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>課程資訊</title>
+    </head>
+    <body>
+        <nav>
+
+          <a href="/home_page/home_page.html">
+            <div class="logoFrame">
+              <i class="fa-solid fa-building-columns"></i>
+              <h2 class="navTitle">University of Nullpointerexception</h2>
+            </div>
+          </a>
+    
+            <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+                </ol>
+            </div>
+    
+        </nav>
+
+        <div class="Frame">
+
+            <div class="rounded-4 infoFrame">
+
+                <div class="titleAndSearch">
+                  <h2 class="infoTitle">課程一覽</h2>
+                  <div class="searchFrame">
+                    <label for="search">以課程代碼或名稱搜尋</label>
+                    <div class="inputFrame">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                      <input type="text" name="search" id="search" class="input rounded-3 border-0 p-1 ps-4 search">
+                    </div>
+                  </div>
+                </div>
+
+                <div class="accordionFrame">
+
+                  <div class="accordion accordion-flush" id="accordionFlush">
+
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                          Accordion Item #1
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                          Accordion Item #2
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                          Accordion Item #3
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                        <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse4" aria-expanded="false" aria-controls="flush-collapse4">
+                            Accordion Item #4
+                          </button>
+                        </h2>
+                        <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
+                          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                        </div>
+                      </div>
+
+                  </div>  <!--accordionEnd-->
+
+                </div>  <!--frameEnd-->
+
+            </div>
+
+            <div class="rounded-4 courseEditFrame">
+              
+              <h2 class="courseEditTitle">修改課程資訊</h2>
+              <h2 class="selectedEditcourse" id="selectedEditCourse">尚未選取欲修改課程</h2>
+
+              <div class="inputFrame" id="inputFrame">
+
+                <label for="courseIdInput">課程代碼</label>
+                <input type="text" class="input courseId" id="courseIdInput" disabled>
+
+                <label for="courseNameInput">課程名稱</label>
+                <input type="text" class="input courseName" id="courseNameInput" disabled>
+
+                <label for="lessonDayInput">上課日</label>
+                <select name="lessonDaySelect" class="form-select lessonDaySelect" id="lessonDaySelect" disabled>
+                  <option value="monday">星期一</option>
+                  <option value="tuesday">星期二</option>
+                  <option value="wednesday">星期三</option>
+                  <option value="thursday">星期四</option>
+                  <option value="friday">星期五</option>
+                  <option value="saturday">星期六</option>
+                  <option value="sunday">星期日</option>
+                </select>
+
+                <label for="startTimeInputHour">上課時間</label>
+                <div class="ms-auto me-auto startTimeFrame">
+                  <input type="text" class="input startTimeHour" id="startTimeInputHour" disabled>
+                  <h4>:</h4>
+                  <input type="text" class="input startTimeMinute" id="startTimeInputMinute" disabled>
+                </div>
+
+                <label for="endTimeInputHour">下課時間</label>
+                <div class="ms-auto me-auto endTimeFrame">
+                  <input type="text" class="input endTimeHour" id="endTimeInputHour" disabled>
+                  <h4>:</h4>
+                  <input type="text" class="input endTimeMinute" id="endTimeInputMinute" disabled>
+                </div>
+
+                <label for="creditInput">學分數</label>
+                <input type="text" class="input credit" id="creditInput" disabled>
+
+                <label for="selectLimitInput">選課人數上限</label>
+                <input type="text" class="input selectLimit" id="selectLimitInput" disabled>
+
+                <button type="button" class="deleteCourse" id="deleteCourse">刪除該課程</button>
+
+              </div>
+
+              <button type="button" class="commitEdit" id="commitEdit">送出修改</button>
+
+            </div>
+
+            <div class="BtnFrame">
+                <button class="backBtn" id="backBtn">回教職員首頁</button>
+            </div>
+
+        </div>
+
+        <!-- bootstrap手風琴需要引用bootstrap的js套件 -->
+        <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="main.js"></script>
+    </body>
+    </html>

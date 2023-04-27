@@ -1,0 +1,61 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>新增學生資訊</title>
+    </head>
+    <body>
+        <nav>
+
+            <a href="/home_page/home_page.html">
+                <div class="logoFrame">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <h2 class="navTitle">University of Nullpointerexception</h2>
+                </div>
+            </a>
+    
+            <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+                </ol>
+            </div>
+    
+        </nav>
+
+        <div class="Frame">
+
+            <div class="inputFrame" id="inputFrame">
+
+                <label for="studentId">學號</label>
+                <div class="innerInputFrame studentIdFrame">
+                    <input type="text" class="rounded-3 border-0 p-2 pe-5 studentId" id="studentId" placeholder="請輸入學號" required>
+                    <i class="fa-regular fa-circle-question question"></i>
+                </div>
+
+                <label for="name">姓名</label>
+                <div class="innerInputFrame nameFrame">
+                    <input type="text" class="rounded-3 border-0 p-2 pe-5 name" id="name" placeholder="請輸入姓名" required>
+                    <i class="fa-regular fa-circle-question question"></i>
+                </div>
+
+                <label for="password">密碼</label>
+                <div class="innerInputFrame passwordFrame">
+                    <input type="text" class="rounded-3 border-0 p-2 pe-5 password" id="password" placeholder="請設定密碼" required>
+                    <i class="fa-regular fa-circle-question question"></i>
+                </div>
+
+            </div>
+            <div class="btnFrame" id="btnFrame">
+                <button class="commitBtn" id="commitBtn">新增</button>
+                <button class="cancelBtn" id="cancelBtn">返回</button>
+            </div>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>學生首頁</title>
+</head>
+<body>
+
+    <nav>
+
+        <a href="/home_page/home_page.html">
+            <div class="logoFrame">
+              <i class="fa-solid fa-building-columns"></i>
+              <h2 class="navTitle">University of Nullpointerexception</h2>
+            </div>
+        </a>
+
+        <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+              <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+            </ol>
+        </div>
+
+    </nav>
+
+    <div class="selectFrame">
+
+        <div class="welcome">
+            <h2 class="studentName" id="studentName">NONE</h2>
+            <h2 class="welcomeText">同學 , Welcome!</h2>
+        </div>
+        <div class="btnFrame">
+            <button class="studentInfo" id="studentInfo" type="button">學生資訊 <i class="fa-solid fa-user"></i></button>
+            <button class="selectCourse" id="selectCourse" type="button">選課系統 <i class="fa-solid fa-computer"></i></button>
+            <button class="backBtn" id="backBtn" type="button">返回首頁</button>
+        </div>
+
+    </div>
+    
+    <script src="main.js"></script>
+</body>
+</html>

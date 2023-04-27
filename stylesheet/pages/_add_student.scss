@@ -1,0 +1,228 @@
+@import "./baseColor";
+
+$textInputBorderRadius : 5px;
+$buttonBorderRadius : 3px;
+$bottonAndLogoColor : rgb(78,102,116);
+$bottonHoverColor : #f1c480;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: $page-color;
+    background-image: url(https://www.unc.edu/wp-content/uploads/2018/05/010318_campus_scenes0171.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+
+    nav{
+        width: 100%;
+        height: 13vh;
+        background-color: $nav-color;
+        position: relative;
+        box-shadow: 0px 0px 30px gray;
+    
+        .logoFrame{
+            width: max-content;
+            
+            i{
+                color: #ffffff;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                font-size: 40px;
+                text-decoration: none;
+            }
+            h2{
+                color: #ffffff;
+                font-family: Californain FB;
+                margin-left: 1vw;
+                display: inline-block;
+                text-decoration: none;
+            }
+        }
+
+        .breadcrumb{
+            position: absolute;
+            height: auto;
+            width: max-content;
+            right: 20px;
+            top: 40%;
+
+            .student{
+                a{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+            .logout{
+                a{
+                    font-size: 16px;
+                    font-weight: 600;
+                    vertical-align: middle;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .Frame{
+        display: flex;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 10vh;
+        height: 60%;
+        width: 60%;
+        background-color: rgb(228, 228, 228);
+        border: 2px solid rgb(148, 148, 148);
+        border-radius: 20px;
+        transition: 0.5s;
+        overflow: hidden;
+        &:hover{
+            scale: 1.01;
+        }
+
+        input{
+            margin: auto;
+            margin-top: 0;
+            width: 100%;
+            transition: 0.4s;
+            &:hover{
+                scale: 1.01;
+            }
+            &:focus{
+                background-color: #f1c480;
+            }
+        }
+
+        .inputFrame{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            height: max-content;
+            width: 40%;
+            label{
+                margin: auto;
+            }
+            .innerInputFrame{
+                margin-bottom: 1vh;
+                position: relative;
+                width: 100%;
+            }
+
+            %innerInputFrameSetting{
+                i{
+                    font-size: 20px;
+                    position: absolute;
+                    right: 2%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    &::after{
+                        width: max-content;
+                        padding: 2px;
+                        color: rgb(57, 68, 71);
+                        position: absolute;
+                        bottom: -3vh;
+                        right: -3vw;
+                        border: 1px solid rgb(93, 111, 116);
+                        border-radius: 3px;
+                        background-color: beige;
+                        font-size: 12px;
+                        opacity: 0;
+                        transition: opacity 0s;
+                    }   
+                    &:hover::after{
+                        opacity: 1;
+                    }
+                }       
+            }
+            .studentIdFrame{
+                @extend %innerInputFrameSetting;
+                i{
+                    &::after{
+                        content: "學生學號限制4~10個字符";
+                    }   
+                }       
+            }
+            .nameFrame{
+                @extend %innerInputFrameSetting;
+                i{
+                    &::after{
+                        content: "請輸入學生姓名不得空白";
+                    }   
+                }     
+            }
+            .passwordFrame{
+                @extend %innerInputFrameSetting;
+                i{
+                    &::after{
+                        content: "密碼為8-20字符且至少含一個特殊符號";
+                    }   
+                }     
+            }
+        }
+        
+        .btnFrame{
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 2vh;
+            width: 40%;
+            height: auto;
+
+            .commitBtn{
+                width: 8vw;
+                height: 30px;
+                color: white;
+                background-color: $nav-color;
+                border-radius: $buttonBorderRadius;
+                border: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    background-color: $bottonHoverColor;
+                    color: black;
+                }
+                &:active{
+                    scale: 0.85;
+                }
+            }
+
+            .cancelBtn{
+                width: 8vw;
+                height: 30px;
+                color: white;
+                background-color: $nav-color;
+                border-radius: $buttonBorderRadius;
+                border: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    background-color: $bottonHoverColor;
+                    color: black;
+                }
+                &:active{
+                    scale: 0.85;
+                }
+            }
+        }
+    }
+}
