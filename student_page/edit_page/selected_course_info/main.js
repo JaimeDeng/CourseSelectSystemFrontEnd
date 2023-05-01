@@ -37,12 +37,12 @@ document.addEventListener("DOMContentLoaded" , ()=>{
     let accountLocal = JSON.parse(accountLocalJson);
     if(accountSession === null){
         if(accountLocal === null){
-            window.location.href = "../../login_page/login.html";
+            window.location.href = "../../../login_page/login.html";
         }else{
             accountId = accountLocal.studentId;
             if(accountLocal.administrator === true){
                 window.alert("此為學生選課系統,教職員不可訪問")
-                window.location.href = "../../home_page/home_page.html";
+                window.location.href = "../../../home_page/home_page.html";
             }
             student.innerHTML = accountLocal.name;
         }
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded" , ()=>{
         accountId = accountSession.studentId;
         if(accountSession.administrator === true){
             window.alert("此為學生選課系統,教職員不可訪問")
-            window.location.href = "../../home_page/home_page.html";
+            window.location.href = "../../../home_page/home_page.html";
         }
         student.innerHTML = accountSession.name;
     }
