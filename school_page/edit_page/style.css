@@ -10824,16 +10824,16 @@ textarea.form-control-lg {
 }
 
 body {
+  height: 100vh;
+  width: 100vw;
   position: relative;
   background-color: #FFFFFF;
-  background-image: url(https://media.istockphoto.com/id/157505397/photo/quandrangle-lawn-at-the-university-of-washington.jpg?s=612x612&w=0&k=20&c=y1TIffgQaLN8AoxZCExNxl_wKoeMq9xIy3_kb8XY2Yg=);
+  background-image: url(https://www.unc.edu/wp-content/uploads/2018/05/010318_campus_scenes0171.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   -webkit-backdrop-filter: blur(10px);
           backdrop-filter: blur(10px);
-  height: 100vh;
-  width: 100vw;
 }
 body nav {
   width: 100%;
@@ -10842,11 +10842,15 @@ body nav {
   position: relative;
   box-shadow: 0px 0px 30px gray;
 }
-body nav .logoFrame {
+body nav a {
   width: -moz-max-content;
   width: max-content;
 }
+body nav .logoFrame {
+  display: inline-block;
+}
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,192 +10858,80 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
-body main {
-  width: 40vw;
-  margin: auto;
-  font-family: 微軟正黑體;
-  margin-top: 13vh;
+body nav .breadcrumb {
+  position: absolute;
+  height: auto;
+  width: -moz-max-content;
+  width: max-content;
+  right: 20px;
+  top: 40%;
+}
+body nav .breadcrumb .employee a {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+}
+body nav .breadcrumb .employee a:hover {
+  color: #FCA311;
+}
+body nav .breadcrumb .logout a {
+  font-size: 16px;
+  font-weight: 600;
+  vertical-align: middle;
+  color: white;
+  text-decoration: none;
+}
+body nav .breadcrumb .logout a:hover {
+  color: #FCA311;
+}
+body .spinner {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  margin-top: -2rem;
+  left: 50%;
+  margin-left: -2rem;
+}
+body .Frame {
   display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
-  justify-content: center;
-}
-body main h1, body main .h1 {
-  font-weight: 400;
-  font-size: 4vw 6vh;
-}
-body .loginTitle {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 5vh;
-}
-body .loginFrame {
+  margin: auto;
+  margin-top: 10vh;
+  background-color: rgba(236, 236, 236, 0.5);
+  height: 60%;
   width: 60%;
+  border: 2px solid rgb(148, 148, 148);
+  border-radius: 20px;
+  transition: 0.5s;
+  overflow: hidden;
+  visibility: hidden;
+}
+body .Frame:hover {
+  scale: 1.005;
+}
+body .Frame .outerBtnFrame {
   display: flex;
-  margin: auto;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
-body .loginFrame .idFrame {
-  position: relative;
-  margin-bottom: 2vh;
-}
-body .loginFrame .idFrame label {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: #14213d;
-  margin-bottom: 1vh;
-}
-body .loginFrame .idFrame .fa-user {
+  justify-content: space-between;
   position: absolute;
-  bottom: 1.3vh;
-  left: 1vh;
-  display: inline-block;
+  bottom: 2vh;
+  width: 40%;
+  height: auto;
 }
-body .loginFrame .idFrame .studentId {
-  width: 100%;
-  padding: 0.9vh 4vh;
-  background-color: #ffd493;
-  border-radius: 5px;
-  border: 1px solid transparent;
-  box-sizing: border-box;
-}
-body .loginFrame .idFrame .fa-circle-question {
-  position: absolute;
-  bottom: 1.3vh;
-  right: 1vh;
-  display: inline-block;
-}
-body .loginFrame .idFrame .fa-circle-question::after {
-  content: "學號為英文字母開頭三個字元以上";
-  width: -moz-max-content;
-  width: max-content;
-  padding: 2px;
-  color: rgb(57, 68, 71);
-  position: absolute;
-  border: 1px solid rgb(93, 111, 116);
-  border-radius: 3px;
-  background-color: beige;
-  top: 3.5vh;
-  right: -7vh;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0s;
-}
-body .loginFrame .idFrame .fa-circle-question:active {
-  scale: 0.8;
-}
-body .loginFrame .idFrame .fa-circle-question:hover::after {
-  opacity: 1;
-}
-body .loginFrame .idFrame .fa-circle-question:active::after {
-  opacity: 0;
-}
-body .loginFrame .passwordFrame {
-  position: relative;
-}
-body .loginFrame .passwordFrame label {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: white;
-  margin-bottom: 1vh;
-}
-body .loginFrame .passwordFrame .fa-key {
-  position: absolute;
-  bottom: 1.3vh;
-  left: 1vh;
-  display: inline-block;
-}
-body .loginFrame .passwordFrame .password {
-  width: 100%;
-  padding: 0.9vh 1.2vh;
-  border-radius: 5px;
-  background-color: #ffd493;
-  border: 1px solid transparent;
-  padding: 0.9vh 4vh;
-  box-sizing: border-box;
-}
-body .loginFrame .passwordFrame .fa-circle-question {
-  position: absolute;
-  bottom: 1.3vh;
-  right: 1vh;
-  display: inline-block;
-}
-body .loginFrame .passwordFrame .fa-circle-question::after {
-  content: "密碼為8-20字符且至少含一個特殊符號";
-  width: -moz-max-content;
-  width: max-content;
-  padding: 2px;
-  color: rgb(57, 68, 71);
-  position: absolute;
-  border: 1px solid rgb(93, 111, 116);
-  border-radius: 3px;
-  background-color: beige;
-  top: 3.5vh;
-  right: -5vh;
-  font-size: 12px;
-  opacity: 0;
-  transition: opacity 0s;
-}
-body .loginFrame .passwordFrame .fa-circle-question:active {
-  scale: 0.8;
-}
-body .loginFrame .passwordFrame .fa-circle-question:hover::after {
-  opacity: 1;
-}
-body .loginFrame .passwordFrame .fa-circle-question:active::after {
-  opacity: 0;
-}
-body .keepLoginFrame {
-  margin-top: 4vh;
-  margin-bottom: 4vh;
-  display: flex;
-  position: relative;
-}
-body .keepLoginFrame label {
-  font-weight: 600;
-  color: white;
-}
-body .keepLoginFrame .keepLoginBox {
-  position: relative;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  outline: none;
-  border: none;
-  border-radius: 4px;
-  height: 20px;
-  width: 20px;
-  margin-right: 0.6vh;
-  background-color: white;
-  border: 1px solid gray;
-}
-body .keepLoginFrame .keepLoginBox:checked {
-  color: white;
-  background-color: rgb(66, 68, 77);
-}
-body .keepLoginFrame .keepLoginBox:checked::after {
-  content: "✔";
-  position: absolute;
-  font-size: 20px;
-  left: 1px;
-  bottom: 0.1px;
-  line-height: 20px;
-}
-body .loginBtnFrame {
-  display: flex;
-  margin: auto;
-  justify-content: center;
-}
-body .loginBtnFrame .loginBtn {
+body .Frame .outerBtnFrame .editBtn {
+  left: 33%;
   width: 8vw;
   height: 30px;
   color: white;
@@ -11048,10 +10940,149 @@ body .loginBtnFrame .loginBtn {
   border: none;
   transition: 0.5s;
 }
-body .loginBtnFrame .loginBtn:hover {
+body .Frame .outerBtnFrame .editBtn:hover {
   background-color: #f1c480;
   color: black;
 }
-body .loginBtnFrame .loginBtn:active {
+body .Frame .outerBtnFrame .editBtn:active {
   scale: 0.85;
+}
+body .Frame .outerBtnFrame .backBtn {
+  right: 33%;
+  width: 8vw;
+  height: 30px;
+  color: white;
+  background-color: #14213d;
+  border-radius: 3px;
+  border: none;
+  transition: 0.5s;
+}
+body .Frame .outerBtnFrame .backBtn:hover {
+  background-color: #f1c480;
+  color: black;
+}
+body .Frame .outerBtnFrame .backBtn:active {
+  scale: 0.85;
+}
+body .Frame .changePwdFrame {
+  box-sizing: content-box;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: -150vh;
+  transform: rotate(-90deg);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgb(228, 228, 228);
+  border: 2px solid rgb(148, 148, 148);
+  border-radius: 20px;
+  transition-property: all, top, transform;
+  transition-duration: 0.5s, 0.4s, 0.4s;
+  z-index: 1;
+}
+body .Frame .changePwdFrame:hover {
+  scale: 1.005;
+}
+body .Frame .changePwdFrame input {
+  margin: auto;
+  margin-top: 0;
+  width: 100%;
+  transition: 0.4s;
+}
+body .Frame .changePwdFrame input:hover {
+  scale: 1.01;
+}
+body .Frame .changePwdFrame input:focus {
+  background-color: #f1c480;
+}
+body .Frame .changePwdFrame .inputFrame {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 30%;
+  width: 40%;
+}
+body .Frame .changePwdFrame .inputFrame label {
+  margin: auto;
+}
+body .Frame .changePwdFrame .inputFrame .newPwdFrame {
+  position: relative;
+  width: 100%;
+}
+body .Frame .changePwdFrame .inputFrame .newPwdFrame .question {
+  font-size: 20px;
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+body .Frame .changePwdFrame .inputFrame .newPwdFrame .question::after {
+  content: "密碼為8-20字符且至少含一個特殊符號";
+  width: -moz-max-content;
+  width: max-content;
+  padding: 2px;
+  color: rgb(57, 68, 71);
+  position: absolute;
+  bottom: -3vh;
+  right: -3vw;
+  border: 1px solid rgb(93, 111, 116);
+  border-radius: 3px;
+  background-color: beige;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0s;
+}
+body .Frame .changePwdFrame .inputFrame .newPwdFrame .question:hover::after {
+  opacity: 1;
+}
+body .Frame .changePwdFrame .btnFrame {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2vh;
+  width: 40%;
+  height: auto;
+}
+body .Frame .changePwdFrame .btnFrame .commitBtn {
+  width: 8vw;
+  height: 30px;
+  color: white;
+  background-color: #14213d;
+  border-radius: 3px;
+  border: none;
+  transition: 0.5s;
+}
+body .Frame .changePwdFrame .btnFrame .commitBtn:hover {
+  background-color: #f1c480;
+  color: black;
+}
+body .Frame .changePwdFrame .btnFrame .commitBtn:active {
+  scale: 0.85;
+}
+body .Frame .changePwdFrame .btnFrame .cancelBtn {
+  width: 8vw;
+  height: 30px;
+  color: white;
+  background-color: #14213d;
+  border-radius: 3px;
+  border: none;
+  transition: 0.5s;
+}
+body .Frame .changePwdFrame .btnFrame .cancelBtn:hover {
+  background-color: #f1c480;
+  color: black;
+}
+body .Frame .changePwdFrame .btnFrame .cancelBtn:active {
+  scale: 0.85;
+}
+body .Frame .infoFrame h2, body .Frame .infoFrame .h2 {
+  display: inline-block;
+}
+body .Frame .infoFrame .employeeId {
+  margin-left: 1vw;
+}
+body .Frame .infoFrame .name {
+  margin-left: 1vw;
 }/*# sourceMappingURL=style.css.map */

@@ -28,9 +28,10 @@ body{
         box-shadow: 0px 0px 30px gray;
     
         .logoFrame{
-            width: max-content;
-            
+            display: inline-block;
+
             i{
+                float: left;
                 color: #ffffff;
                 margin-top: 3vh;
                 margin-left: 3vh;
@@ -38,10 +39,12 @@ body{
                 text-decoration: none;
             }
             h2{
+                float: left;
                 color: #ffffff;
                 font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
                 margin-left: 1vw;
-                display: inline-block;
                 text-decoration: none;
             }
         }
@@ -107,7 +110,7 @@ body{
             %button-setting{
                 position: relative;
                 margin: auto;
-                width: 30%;
+                width: 25%;
                 height: 30%;
                 border: 1px solid rgb(82, 82, 82);
                 border-radius: 5px;
@@ -132,7 +135,7 @@ body{
                     color: white;
                 }
                 &:hover::before{
-                    left: -20%;
+                    left: -30%;
                 }
                 &:active{
                     scale: 0.95;
@@ -142,13 +145,13 @@ body{
                 }
             }
 
+            .employeeInfo{
+                @extend %button-setting;
+            }
             .studentInfo{
                 @extend %button-setting;
             }
             .courseEdit{
-                @extend %button-setting;
-            }
-            .selectCourse{
                 @extend %button-setting;
             }
             .backBtn{
@@ -177,3 +180,4 @@ body{
         }
     }
 }
+

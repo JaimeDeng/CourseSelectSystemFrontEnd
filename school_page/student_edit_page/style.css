@@ -10843,10 +10843,10 @@ body nav {
   box-shadow: 0px 0px 30px gray;
 }
 body nav .logoFrame {
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
 }
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,10 +10854,12 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
 body nav .breadcrumb {
@@ -10868,13 +10870,13 @@ body nav .breadcrumb {
   right: 20px;
   top: 40%;
 }
-body nav .breadcrumb .student a {
+body nav .breadcrumb .employee a {
   font-size: 18px;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
-body nav .breadcrumb .student a:hover {
+body nav .breadcrumb .employee a:hover {
   color: #FCA311;
 }
 body nav .breadcrumb .logout a {

@@ -1,0 +1,178 @@
+@import "./baseColor";
+
+$textInputBorderRadius : 5px;
+$buttonBorderRadius : 3px;
+$bottonAndLogoColor : rgb(78,102,116);
+$bottonHoverColor : #f1c480;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: $page-color;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Statsbiblioteket_l%C3%A6sesalen-2.jpg/1920px-Statsbiblioteket_l%C3%A6sesalen-2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(5px);
+
+    nav{
+        width: 100%;
+        height: 13vh;
+        background-color: $nav-color;
+        position: relative;
+        box-shadow: 0px 0px 30px gray;
+    
+        .logoFrame{
+            display: inline-block;
+
+            i{
+                float: left;
+                color: #ffffff;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                font-size: 40px;
+                text-decoration: none;
+            }
+            h2{
+                float: left;
+                color: #ffffff;
+                font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                margin-left: 1vw;
+                text-decoration: none;
+            }
+        }
+
+        .breadcrumb{
+            position: absolute;
+            height: auto;
+            width: max-content;
+            right: 20px;
+            top: 40%;
+
+            .student{
+                a{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+            .logout{
+                a{
+                    font-size: 16px;
+                    font-weight: 600;
+                    vertical-align: middle;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .frame{
+        position: relative;
+        height: 83%;
+        width: 95%;
+        background-color: rgba(115, 115, 115, 0.8);
+        border: 2px solid rgb(91, 85, 85);
+
+        .infoFrame{
+            position: relative;
+            width: 100%;
+            height: 93%;
+
+            .outerDayFrame{
+                position: relative;
+                width: 14%;
+                height: 100%;
+    
+                .titleFrame{
+                    width: 100%;
+                    height: 5%;
+                }
+    
+                .dayFrame{
+                    width: 100%;
+                    height: 93%;
+                    background-color: rgba(236, 236, 236, 0.5);
+                    overflow: auto;
+
+                    .card{
+                        position: relative;
+                        margin-right: auto;
+                        margin-left: auto;
+                        margin-top: 3%;
+                        background-color: white;
+                        height: 20%;
+                        width: 95%;
+                        text-align: center;
+                        border-radius: 2rem;
+                        font-size: 16px;
+                        font-weight: 600;
+
+                        .dropBtn{
+                            position: absolute;
+                            bottom: 0%;
+                            right: 1%;
+                            width: 3vw;
+                            height: 30px;
+                            color: white;
+                            background-color: rgb(109, 34, 34);
+                            border-radius: 2rem;
+                            border: none;
+                            transition: 0.5s;
+                
+                            &:hover{
+                                background-color: $bottonHoverColor;
+                                color: black;
+                            }
+                            &:active{
+                                scale: 0.85;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .btnFrame{
+            position: relative;
+            width: 100%;
+            height: 7%;
+
+            .backBtn{
+                width: 8vw;
+                    height: 30px;
+                    color: white;
+                    background-color: $nav-color;
+                    border-radius: $buttonBorderRadius;
+                    border: none;
+                    transition: 0.5s;
+        
+                    &:hover{
+                        background-color: $bottonHoverColor;
+                        color: black;
+                    }
+                    &:active{
+                        scale: 0.85;
+                    }
+            }
+
+        }
+        
+    }
+}

@@ -1,0 +1,348 @@
+@import "./baseColor";
+
+$textInputBorderRadius : 5px;
+$buttonBorderRadius : 3px;
+$bottonAndLogoColor : rgb(78,102,116);
+$bottonHoverColor : #f1c480;
+
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    background-color: $page-color;
+    background-image: url(https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Y29sbGVnZSUyMGNsYXNzcm9vbXxlbnwwfHwwfHw%3D&w=1000&q=80);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+
+    nav{
+        width: 100%;
+        height: 13vh;
+        background-color: $nav-color;
+        position: relative;
+        box-shadow: 0px 0px 30px gray;
+    
+        .logoFrame{
+            display: inline-block;
+
+            i{
+                float: left;
+                color: #ffffff;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                font-size: 40px;
+                text-decoration: none;
+            }
+            h2{
+                float: left;
+                color: #ffffff;
+                font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
+                margin-left: 1vw;
+                text-decoration: none;
+            }
+        }
+
+        .breadcrumb{
+            position: absolute;
+            height: auto;
+            width: max-content;
+            right: 20px;
+            top: 40%;
+
+            .employee{
+                a{
+                    font-size: 18px;
+                    font-weight: 600;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+            .logout{
+                a{
+                    font-size: 16px;
+                    font-weight: 600;
+                    vertical-align: middle;
+                    color: white;
+                    text-decoration: none;
+                    &:hover{
+                        color: $selector-color;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .Frame{
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 3vh;
+        background-color: rgba(236, 236, 236, 0.5);
+        height: 80%;
+        width: 90%;
+        border: 2px solid rgb(148, 148, 148);
+        border-radius: 20px;
+        transition: 0.5s;
+        overflow: hidden;
+        &:hover{
+            scale: 1.01;
+        }
+
+        .BtnFrame{
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 2vh;
+            width: 30%;
+            height: auto;
+
+            .backBtn{
+                width: 8vw;
+                height: 30px;
+                color: white;
+                background-color: $nav-color;
+                border-radius: $buttonBorderRadius;
+                border: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    background-color: $bottonHoverColor;
+                    color: black;
+                }
+                &:active{
+                    scale: 0.85;
+                }
+            }
+        }
+            
+
+        .infoFrame{
+            position: absolute;
+            height: 90%;
+            width: 60%;
+            background-color: rgba(236, 236, 236, 1);
+            top: 2%;
+            left: 2%;
+            
+            .titleAndSearch{
+                position: relative;
+                .infoTitle{
+                    margin-top: 20px;
+                    margin-left: 2%;
+                }
+                .searchFrame{
+                    position: absolute;
+                    right: 2%;
+                    top: 0;
+                    bottom: 0;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    display: inline-block;
+                    height: max-content;
+                    width: max-content;
+                    .inputFrame{
+                        position: relative;
+                        display: inline-block;
+                        height: max-content;
+                        width: max-content;
+                        .fa-magnifying-glass::before{
+                            position: absolute;
+                            font-size: 16px;
+                            left: 5%;
+                            top: 50%;
+                            margin-top: -8px;
+                        }
+                        .search{
+                            width: 9vw;
+                        }
+                    }
+                }          
+            }
+
+            .accordionFrame{
+                overflow: auto;
+                margin: auto;
+                width: 98%;
+                height: 85%;
+                .accordion-flush{
+                    width: 100%;
+                    .accordion-body{
+                        position: relative;
+                        .addBtn{
+                            position: absolute;
+                            right: 1vw;
+                            bottom: 40%;
+                            margin: auto;
+                            width: 4vw;
+                            height: 30px;
+                            color: white;
+                            background-color: $nav-color;
+                            border-radius: $buttonBorderRadius;
+                            border: none;
+                            transition: 0.5s;
+                
+                            &:hover{
+                                background-color: $bottonHoverColor;
+                                color: black;
+                            }
+                            &:active{
+                                scale: 0.85;
+                            }
+                        }     
+                    }
+                }
+            }
+        }
+
+        .courseEditFrame{
+            position: absolute;
+            height: 90%;
+            width: 35%;
+            background-color: rgba(236, 236, 236, 1);
+            top: 2%;
+            right: 2%;
+            .courseEditTitle{
+                display: inline-block;
+                margin-top: 20px;
+                margin-left: 2%;
+            }
+            .selectedEditcourse{
+                font-size: 24px;
+                width: max-content;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 2px;
+                margin-bottom: 1vh;
+                padding: 3px;
+                background-color: #f1c480;
+                border: 1px solid #cb9645;
+                border-radius: 10px;
+            }
+
+            .inputFrame{
+                margin: auto;
+                display: flex;
+                width: 60%;
+                flex-direction: column;
+                label{
+                    margin: auto;
+                }
+                .lessonDaySelect{
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 1vh;
+                    width: 30%;
+                    &:hover{
+                        scale: 1.01;
+                    }
+                    &:focus{
+                        background-color: #f1c480;
+                    }
+                    &:disabled{
+                        background-color: rgb(190, 188, 187);
+                    }
+                }
+                .input{
+                    border-radius: 6px;
+                    border: none;
+                    padding: 2px 6px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-bottom: 1vh;
+                    height: 30px;
+                    width: 80%;
+                    transition: 0.4s;
+                    &:hover{
+                        scale: 1.01;
+                    }
+                    &:focus{
+                        background-color: #f1c480;
+                    }
+                    &:disabled{
+                        background-color: rgb(190, 188, 187);
+                    }
+                }
+                .credit , .selectLimit{
+                    margin-left: auto;
+                    margin-right: auto;
+                    width: 20%;
+                }
+                .startTimeFrame{
+                    display: flex;
+                    width: 60%;
+                    .startTimeHour , .startTimeMinute{
+                        height: 30px;
+                        width: 30%;
+                    }
+                }
+                .endTimeFrame{
+                    display: flex;
+                    width: 60%;
+                    .endTimeHour , .endTimeMinute{
+                        height: 30px;
+                        width: 30%;
+                    }
+                }
+
+                .deleteCourse{
+                    font-size: 14px;
+                    margin: auto;
+                    width: 5vw;
+                    height: 30px;
+                    color: white;
+                    background-color: rgb(109, 34, 34);
+                    border-radius: $buttonBorderRadius;
+                    border: none;
+                    transition: 0.5s;
+        
+                    &:hover{
+                        background-color: $bottonHoverColor;
+                        color: black;
+                    }
+                    &:active{
+                        scale: 0.85;
+                    }
+                    
+                }
+            }
+
+            .commitEdit{
+                position: absolute;
+                bottom: 2vh;
+                left: 0;
+                right: 0;
+                margin: auto;
+                width: 8vw;
+                height: 30px;
+                color: white;
+                background-color: $nav-color;
+                border-radius: $buttonBorderRadius;
+                border: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    background-color: $bottonHoverColor;
+                    color: black;
+                }
+                &:active{
+                    scale: 0.85;
+                }
+            }
+        }
+        
+    }
+}

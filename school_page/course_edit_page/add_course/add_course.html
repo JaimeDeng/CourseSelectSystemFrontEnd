@@ -1,0 +1,80 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>新增課程資訊</title>
+    </head>
+    <body>
+        <nav>
+
+            <a href="/home_page/home_page.html">
+                <div class="logoFrame">
+                  <i class="fa-solid fa-building-columns"></i>
+                  <h2 class="navTitle">University of Nullpointerexception</h2>
+                </div>
+            </a>
+    
+            <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item employee"><a id="employee" href="#">Name</a></li>
+                  <li class="breadcrumb-item logout"><a id="logout" href="#">登出</a></li>
+                </ol>
+            </div>
+    
+        </nav>
+
+        <div class="Frame">
+
+            <div class="inputFrame" id="inputFrame">
+
+                <label for="courseIdInput">課程代碼</label>
+                <input type="text" class="input courseId" id="courseIdInput" placeholder="請輸入4~10個字元的課程代碼">
+
+                <label for="courseNameInput">課程名稱</label>
+                <input type="text" class="input courseName" id="courseNameInput">
+
+                <label for="lessonDayInput">上課日</label>
+                <select name="lessonDaySelect" class="ms-auto me-auto form-select lessonDaySelect" id="lessonDaySelect">
+                  <option value="monday">星期一</option>
+                  <option value="tuesday">星期二</option>
+                  <option value="wednesday">星期三</option>
+                  <option value="thursday">星期四</option>
+                  <option value="friday">星期五</option>
+                  <option value="saturday">星期六</option>
+                  <option value="sunday">星期日</option>
+                </select>
+
+                <label for="startTimeInputHour">上課時間</label>
+                <div class="ms-auto me-auto startTimeFrame">
+                  <input type="text" class="input startTimeHour" id="startTimeHourInput" maxlength="2">
+                  <h4>:</h4>
+                  <input type="text" class="input startTimeMinute" id="startTimeMinuteInput" maxlength="2">
+                </div>
+
+                <label for="endTimeInputHour">下課時間</label>
+                <div class="ms-auto me-auto endTimeFrame">
+                  <input type="text" class="input endTimeHour" id="endTimeHourInput" maxlength="2">
+                  <h4>:</h4>
+                  <input type="text" class="input endTimeMinute" id="endTimeMinuteInput" maxlength="2">
+                </div>
+
+                <label for="creditInput">學分數</label>
+                <input type="text" class="input credit" id="creditInput">
+
+                <label for="selectLimitInput">選課人數上限</label>
+                <input type="text" class="input selectLimit" id="selectLimitInput">
+            </div>
+            
+            <div class="btnFrame" id="btnFrame">
+                <button class="commitBtn" id="commitBtn">新增</button>
+                <button class="cancelBtn" id="cancelBtn">返回</button>
+            </div>
+
+        </div>
+        <script src="main.js"></script>
+    </body>
+    </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>商品列表</h2>
+    <ul id="product-list"></ul>
+
+    <h2>選單列隊</h2>
+    <ul id="cart-list"></ul>
+
+    <button id="submit-btn">送出</button>
+
+    <script>
+        // 商品列表
+        const productList = [
+        { id: 1, name: '商品1', price: 100 },
+        { id: 2, name: '商品2', price: 200 },
+        { id: 3, name: '商品3', price: 300 },
+        ];
+
+        // 選單列隊
+        const cartList = [];
+
+
+        // 渲染商品列表
+        function renderProductList() {
+        const productListElem = document.querySelector('#product-list');
+        
+        // 清空原本的內容
+        productListElem.innerHTML = '';
+
+        // 將商品加入列表
+        productList.forEach((product) => {
+            const listItemElem = document.createElement('li');
+            listItemElem.innerText = `${product.name} - ${product.price}`;
+
+            // 加入「加入選單」按鈕
+            const addBtnElem = document.createElement('button');
+            addBtnElem.innerText = '加入選單';
+            addBtnElem.addEventListener('click', () => addToCart(product));
+            listItemElem.appendChild(addBtnElem);
+            productListElem.appendChild(listItemElem);
+        });
+        }
+
+
+        // 渲染選單列隊
+        function renderCartList() {
+            const cartListElem = document.querySelector('#cart-list');
+
+            // 清空原本的內容
+            cartListElem.innerHTML = '';
+
+            // 將選單加入列表
+            cartList.forEach((cartItem) => {
+                const listItemElem = document.createElement('li');
+                listItemElem.innerText = `${cartItem.name} - ${cartItem.price}`;
+
+                // 加入「移除」按鈕
+                const removeBtnElem = document.createElement('button');
+                removeBtnElem.innerText = '移除';
+                removeBtnElem.addEventListener('click', () => removeFromCart(cartItem));
+                listItemElem.appendChild(removeBtnElem);
+
+                cartListElem.appendChild(listItemElem);
+            });
+        }
+
+
+        // 將商品加入選單列隊
+        function addToCart(product) {
+        cartList.push(product);
+        renderCartList();
+        }
+
+
+        // 將選單從選單列隊中移除
+        function removeFromCart(cartItem) {
+        const index = cartList.indexOf(cartItem);
+        cartList.splice(index, 1);
+        renderCartList();
+        }
+
+
+        // 送出選單
+        function submitCart() {
+        // TODO: 實作送出選單的功能
+        }
+
+        
+        // 當按下「送出」按鈕時呼叫 submitCart 函式
+        const submitBtnElem = document.querySelector('#submit-btn');
+        submitBtnElem.addEventListener('click', submitCart);
+
+        // 初始化
+        renderProductList();
+        renderCartList();
+
+        
+    </script>
+    
+</body>
+</html>

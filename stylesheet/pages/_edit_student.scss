@@ -28,9 +28,10 @@ body{
         box-shadow: 0px 0px 30px gray;
     
         .logoFrame{
-            width: max-content;
-            
+            display: inline-block;
+
             i{
+                float: left;
                 color: #ffffff;
                 margin-top: 3vh;
                 margin-left: 3vh;
@@ -38,10 +39,12 @@ body{
                 text-decoration: none;
             }
             h2{
+                float: left;
                 color: #ffffff;
                 font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
                 margin-left: 1vw;
-                display: inline-block;
                 text-decoration: none;
             }
         }
@@ -53,7 +56,7 @@ body{
             right: 20px;
             top: 40%;
 
-            .student{
+            .employee{
                 a{
                     font-size: 18px;
                     font-weight: 600;
@@ -205,14 +208,14 @@ body{
             }
         }
 
-        .courseEditFrame{
+        .studentEditFrame{
             position: absolute;
             height: 90%;
             width: 35%;
             background-color: rgba(236, 236, 236, 1);
             top: 2%;
             right: 2%;
-            .courseEditTitle{
+            .studentEditTitle{
                 display: inline-block;
                 margin-top: 20px;
                 margin-left: 2%;
@@ -284,6 +287,11 @@ body{
                     }
                     
                 }
+            }
+
+            .administrator{
+                margin: auto;
+                width: 30%;
             }
 
             .commitEdit{

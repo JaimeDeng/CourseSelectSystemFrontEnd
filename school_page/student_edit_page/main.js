@@ -19,6 +19,42 @@ editStudent.addEventListener("click" , ()=>{
 const accordionFlush = document.getElementById("accordionFlush");
 const search = document.getElementById("search");
 let studentData = [];
+let employee = document.getElementById("employee");
+
+logout.addEventListener("click" , ()=>{
+    sessionStorage.removeItem("accountSession");
+    localStorage.removeItem("accountLocal");
+    window.location.href = "../../home_page/home_page.html";
+});
+
+employee.addEventListener("click" , ()=>{
+    window.location.href = "../edit_page/edit_page.html";
+});
+
+//開啟畫面時檢查storage有無account資訊
+document.addEventListener("DOMContentLoaded" , ()=>{
+    let accountSessionJson = sessionStorage.getItem("accountSession");
+    let accountLocalJson = localStorage.getItem("accountLocal");
+    let accountSession = JSON.parse(accountSessionJson);
+    let accountLocal = JSON.parse(accountLocalJson);
+    if(accountSession === null){
+        if(accountLocal === null){
+            window.location.href = "../../login_page/login.html";
+        }else{
+            if(accountLocal.administrator === false){
+                window.alert("您沒有權限訪問!")
+                window.location.href = "../../home_page/home_page.html";
+            }
+            employee.innerHTML = accountLocal.name;
+        }
+    }else{
+        if(accountSession.administrator === false){
+            window.alert("您沒有權限訪問!")
+            window.location.href = "../../home_page/home_page.html";
+        }
+        employee.innerHTML = accountSession.name;
+    }
+})
 
 
 //functions

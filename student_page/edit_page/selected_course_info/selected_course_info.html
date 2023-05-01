@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>已選課程資訊</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/home_page/home_page.html">
+            <div class="logoFrame">
+              <i class="fa-solid fa-building-columns"></i>
+              <h2 class="navTitle">University of Nullpointerexception</h2>
+            </div>
+        </a>
+
+        <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
+              <li class="breadcrumb-item logout"><a id="logout" href="#">登出</a></li>
+            </ol>
+        </div>
+    </nav>
+
+    <div class="ps-2 pe-2 d-flex flex-column m-auto mt-4 justify-content-center align-items-center rounded-5 frame">
+
+        <div class="d-flex justify-content-center align-items-center rounded-5 infoFrame">
+
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame sunday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-dark title">Sunday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame sunday"></div>
+            </div>
+    
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame monday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-light title">Monday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame monday"></div>
+            </div>
+            
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame tuesday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-light title">Tuesday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame tuesday"></div>
+            </div>
+    
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame wednesday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-light title">Wednesday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame wednesday"></div>
+            </div>
+    
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame thursday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-light title">Thursday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame thursday"></div>
+            </div>
+    
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame friday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-light title">Friday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame friday"></div>
+            </div>
+    
+            <div class="d-flex flex-column justify-content-between ms-auto me-auto rounded-5 outerDayFrame saturday">
+                <div class="text-center  titleFrame"><h2 class="fw-bold text-dark title">Saturday</h2></div>
+                <div class="d-flex flex-column mb-0 rounded-5 dayFrame saturday"></div>
+            </div>
+    
+        </div> <!--infoFrame-->
+
+        <div class="d-flex btnFrame">
+            <button type="button" class="m-auto backBtn" id="backBtn">返回</button>
+        </div>
+
+    </div> <!--frame-->
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -20,8 +20,8 @@
     
             <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
                 <ol class="breadcrumb">
-                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
-                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+                    <li class="breadcrumb-item employee"><a id="employee" href="#">Name</a></li>
+                    <li class="breadcrumb-item logout"><a id="logout" href="#">登出</a></li>
                 </ol>
             </div>
     
@@ -47,6 +47,13 @@
                 <div class="innerInputFrame passwordFrame">
                     <input type="text" class="rounded-3 border-0 p-2 pe-5 password" id="password" placeholder="請設定密碼" required>
                     <i class="fa-regular fa-circle-question question"></i>
+                </div>
+                <label for="administrator">是否為職員</label>
+                <div class="ms-auto me-auto innerInputFrame administratorFrame">
+                    <select name="administrator" class="form-select administrator" id="administrator">
+                        <option value="false">否</option>
+                        <option value="true">是</option>
+                    </select>
                 </div>
 
             </div>

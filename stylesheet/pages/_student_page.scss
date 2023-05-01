@@ -28,9 +28,10 @@ body{
         box-shadow: 0px 0px 30px gray;
     
         .logoFrame{
-            width: max-content;
-            
+            display: inline-block;
+
             i{
+                float: left;
                 color: #ffffff;
                 margin-top: 3vh;
                 margin-left: 3vh;
@@ -38,10 +39,12 @@ body{
                 text-decoration: none;
             }
             h2{
+                float: left;
                 color: #ffffff;
                 font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
                 margin-left: 1vw;
-                display: inline-block;
                 text-decoration: none;
             }
         }
@@ -118,10 +121,10 @@ body{
                 &::before{
                     content: "";
                     height: 100%;
-                    width: 160%;
+                    width: 300%;
                     position: absolute;
                     top: 0;
-                    left: -160%;
+                    left: -300%;
                     background-color: $nav-color;
                     transform: skewX(45deg);    //傾斜元素的角度
                     transition: 0.4s ease;
@@ -132,7 +135,7 @@ body{
                     color: white;
                 }
                 &:hover::before{
-                    left: -20%;
+                    left: -60%;
                 }
                 &:active{
                     scale: 0.95;

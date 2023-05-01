@@ -10843,10 +10843,10 @@ body nav {
   box-shadow: 0px 0px 30px gray;
 }
 body nav .logoFrame {
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
 }
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,10 +10854,12 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
 body nav .breadcrumb {
@@ -10912,10 +10914,10 @@ body .selectFrame .btnFrame {
   flex-direction: row;
   margin-top: 4vh;
 }
-body .selectFrame .btnFrame .selectCourse, body .selectFrame .btnFrame .courseEdit, body .selectFrame .btnFrame .studentInfo {
+body .selectFrame .btnFrame .courseEdit, body .selectFrame .btnFrame .studentInfo, body .selectFrame .btnFrame .employeeInfo {
   position: relative;
   margin: auto;
-  width: 30%;
+  width: 25%;
   height: 30%;
   border: 1px solid rgb(82, 82, 82);
   border-radius: 5px;
@@ -10924,7 +10926,7 @@ body .selectFrame .btnFrame .selectCourse, body .selectFrame .btnFrame .courseEd
   overflow: hidden;
   z-index: 1;
 }
-body .selectFrame .btnFrame .selectCourse::before, body .selectFrame .btnFrame .courseEdit::before, body .selectFrame .btnFrame .studentInfo::before {
+body .selectFrame .btnFrame .courseEdit::before, body .selectFrame .btnFrame .studentInfo::before, body .selectFrame .btnFrame .employeeInfo::before {
   content: "";
   height: 100%;
   width: 170%;
@@ -10936,17 +10938,17 @@ body .selectFrame .btnFrame .selectCourse::before, body .selectFrame .btnFrame .
   transition: 0.4s ease;
   z-index: -1;
 }
-body .selectFrame .btnFrame .selectCourse:hover, body .selectFrame .btnFrame .courseEdit:hover, body .selectFrame .btnFrame .studentInfo:hover {
+body .selectFrame .btnFrame .courseEdit:hover, body .selectFrame .btnFrame .studentInfo:hover, body .selectFrame .btnFrame .employeeInfo:hover {
   background-color: #FCA311;
   color: white;
 }
-body .selectFrame .btnFrame .selectCourse:hover::before, body .selectFrame .btnFrame .courseEdit:hover::before, body .selectFrame .btnFrame .studentInfo:hover::before {
-  left: -20%;
+body .selectFrame .btnFrame .courseEdit:hover::before, body .selectFrame .btnFrame .studentInfo:hover::before, body .selectFrame .btnFrame .employeeInfo:hover::before {
+  left: -30%;
 }
-body .selectFrame .btnFrame .selectCourse:active, body .selectFrame .btnFrame .courseEdit:active, body .selectFrame .btnFrame .studentInfo:active {
+body .selectFrame .btnFrame .courseEdit:active, body .selectFrame .btnFrame .studentInfo:active, body .selectFrame .btnFrame .employeeInfo:active {
   scale: 0.95;
 }
-body .selectFrame .btnFrame .selectCourse:active::before, body .selectFrame .btnFrame .courseEdit:active::before, body .selectFrame .btnFrame .studentInfo:active::before {
+body .selectFrame .btnFrame .courseEdit:active::before, body .selectFrame .btnFrame .studentInfo:active::before, body .selectFrame .btnFrame .employeeInfo:active::before {
   background-color: #475880;
 }
 body .selectFrame .btnFrame .backBtn {

@@ -3,12 +3,13 @@ function deleteStudentReqBody(studenId) {
     this.studentId = studenId;
 }
 
-function editStudentReqBody(studenId , newStudentId , name , password , acquiredCredit) {
+function editStudentReqBody(studenId , newStudentId , name , password , acquiredCredit , administrator) {
     this.studentId = studenId;
     this.newStudentId = newStudentId;
     this.name = name;
     this.password = password;
     this.acquiredCredit = acquiredCredit;
+    this.administrator = administrator;
 }
 
 //按鈕
@@ -35,6 +36,46 @@ let addBtnElementList;
 let deleteStudentReq;
 let editStudentReq;
 let oldId;
+const administrator = document.getElementById("administrator");
+let administratorValue = document.getElementById("administrator").value === "true";
+
+let employee = document.getElementById("employee");
+
+logout.addEventListener("click" , ()=>{
+    sessionStorage.removeItem("accountSession");
+    localStorage.removeItem("accountLocal");
+    window.location.href = "../../../home_page/home_page.html";
+});
+
+employee.addEventListener("click" , ()=>{
+    window.location.href = "../../edit_page/edit_page.html";
+});
+
+//開啟畫面時檢查storage有無account資訊
+document.addEventListener("DOMContentLoaded" , ()=>{
+    let accountSessionJson = sessionStorage.getItem("accountSession");
+    let accountLocalJson = localStorage.getItem("accountLocal");
+    let accountSession = JSON.parse(accountSessionJson);
+    let accountLocal = JSON.parse(accountLocalJson);
+    if(accountSession === null){
+        if(accountLocal === null){
+            window.location.href = "../../../login_page/login.html";
+        }else{
+            if(accountLocal.administrator === false){
+                window.alert("您沒有權限訪問!")
+                window.location.href = "../../../home_page/home_page.html";
+            }
+            employee.innerHTML = accountLocal.name;
+        }
+    }else{
+        if(accountSession.administrator === false){
+            window.alert("您沒有權限訪問!")
+            window.location.href = "../../../home_page/home_page.html";
+        }
+        employee.innerHTML = accountSession.name;
+    }
+})
+
 
 //functions
 
@@ -53,7 +94,7 @@ function loadStudentInfo() {
         studentData.studentInfoList.forEach((element , index) => {
             let itemNo = index + 1;
             accordionFlush.innerHTML += 
-            `<div class=\"accordion-item\"><h2 class=\"accordion-header\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapse${itemNo}\" aria-expanded=\"false\" aria-controls=\"flush-collapse${itemNo}\">${element.studentId}&nbsp${element.name}</button></h2><div id=\"flush-collapse${itemNo}\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlush\"><div class=\"accordion-body\"><h6>學號:${element.studentId}</h6><h6>姓名:${element.name}</h6><h6>學分:${element.acquiredCredit}</h6><h6>已選課程:${element.selectedCourse}</h6>${addBtnList[index]}</div></div></div>`;
+            `<div class=\"accordion-item\"><h2 class=\"accordion-header\"><button class=\"accordion-button collapsed\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#flush-collapse${itemNo}\" aria-expanded=\"false\" aria-controls=\"flush-collapse${itemNo}\">${element.studentId}&nbsp${element.name}</button></h2><div id=\"flush-collapse${itemNo}\" class=\"accordion-collapse collapse\" data-bs-parent=\"#accordionFlush\"><div class=\"accordion-body\"><h6>學號:${element.studentId}</h6><h6>姓名:${element.name}</h6><h6>學分:${element.acquiredCredit}</h6><h6>已選課程:${element.selectedCourse}</h6><h6>職員:${element.administrator}</h6>${addBtnList[index]}</div></div></div>`;
         });    
     }
 }
@@ -67,7 +108,13 @@ function addBtnEvenListener() {
     addBtnElementList.forEach((element , index1) => {
         element.addEventListener("click" , () => {
             oldId = studentData.studentInfoList[index1].studentId;
+            if(studentData.studentInfoList[index1].administrator === true){
+                administrator.selectedIndex = 1;
+            }else{
+                administrator.selectedIndex = 0;
+            }
             console.log(oldId);
+            administrator.disabled = false;
             allInputElement.forEach((element , index2) => {
                 element.disabled = false;
                 selectedEditStudent.innerText = studentData.studentInfoList[index1].studentId + " " + studentData.studentInfoList[index1].name;
@@ -110,7 +157,7 @@ function deleteResult() {
         element.style.display = "none";
     });
 
-    inputFrame.innerHTML = `<h3>${deleteData.message}</h3>`;
+    inputFrame.innerHTML = `<h3 style="margin-top:50%;">${deleteData.message}</h3>`;
 
     commitEdit.innerText = "返回"
 
@@ -177,7 +224,8 @@ deleteStudent.addEventListener("click" , ()=>{
 
 //編輯學生資訊
 commitEdit.addEventListener("click" , ()=>{
-    editStudentReq = new editStudentReqBody(oldId , allInputElement[0].value , allInputElement[1].value , allInputElement[2].value , allInputElement[3].value);
+    administratorValue = document.getElementById("administrator").value === "true";
+    editStudentReq = new editStudentReqBody(oldId , allInputElement[0].value , allInputElement[1].value , allInputElement[2].value , allInputElement[3].value , administratorValue);
     console.log(editStudentReq);
     fetch("http://localhost:3000/api/editStudentInfo", {
             method: 'post',

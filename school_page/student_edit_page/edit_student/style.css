@@ -10843,10 +10843,10 @@ body nav {
   box-shadow: 0px 0px 30px gray;
 }
 body nav .logoFrame {
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
 }
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,10 +10854,12 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
 body nav .breadcrumb {
@@ -10868,13 +10870,13 @@ body nav .breadcrumb {
   right: 20px;
   top: 40%;
 }
-body nav .breadcrumb .student a {
+body nav .breadcrumb .employee a {
   font-size: 18px;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
-body nav .breadcrumb .student a:hover {
+body nav .breadcrumb .employee a:hover {
   color: #FCA311;
 }
 body nav .breadcrumb .logout a {
@@ -11008,7 +11010,7 @@ body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body .addBtn:
 body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body .addBtn:active {
   scale: 0.85;
 }
-body .Frame .courseEditFrame {
+body .Frame .studentEditFrame {
   position: absolute;
   height: 90%;
   width: 35%;
@@ -11016,12 +11018,12 @@ body .Frame .courseEditFrame {
   top: 2%;
   right: 2%;
 }
-body .Frame .courseEditFrame .courseEditTitle {
+body .Frame .studentEditFrame .studentEditTitle {
   display: inline-block;
   margin-top: 20px;
   margin-left: 2%;
 }
-body .Frame .courseEditFrame .selectedEditStudent {
+body .Frame .studentEditFrame .selectedEditStudent {
   font-size: 24px;
   width: -moz-max-content;
   width: max-content;
@@ -11034,16 +11036,16 @@ body .Frame .courseEditFrame .selectedEditStudent {
   border: 1px solid #cb9645;
   border-radius: 10px;
 }
-body .Frame .courseEditFrame .inputFrame {
+body .Frame .studentEditFrame .inputFrame {
   margin: auto;
   display: flex;
   width: 80%;
   flex-direction: column;
 }
-body .Frame .courseEditFrame .inputFrame label {
+body .Frame .studentEditFrame .inputFrame label {
   margin: auto;
 }
-body .Frame .courseEditFrame .inputFrame .input {
+body .Frame .studentEditFrame .inputFrame .input {
   border-radius: 6px;
   border: none;
   padding: 2px 6px;
@@ -11054,19 +11056,19 @@ body .Frame .courseEditFrame .inputFrame .input {
   width: 60%;
   transition: 0.4s;
 }
-body .Frame .courseEditFrame .inputFrame .input:hover {
+body .Frame .studentEditFrame .inputFrame .input:hover {
   scale: 1.01;
 }
-body .Frame .courseEditFrame .inputFrame .input:focus {
+body .Frame .studentEditFrame .inputFrame .input:focus {
   background-color: #f1c480;
 }
-body .Frame .courseEditFrame .inputFrame .input:disabled {
+body .Frame .studentEditFrame .inputFrame .input:disabled {
   background-color: rgb(190, 188, 187);
 }
-body .Frame .courseEditFrame .inputFrame .credit {
+body .Frame .studentEditFrame .inputFrame .credit {
   width: 20%;
 }
-body .Frame .courseEditFrame .inputFrame .deleteStudent {
+body .Frame .studentEditFrame .inputFrame .deleteStudent {
   font-size: 14px;
   margin: auto;
   margin-top: 3vh;
@@ -11080,14 +11082,18 @@ body .Frame .courseEditFrame .inputFrame .deleteStudent {
   border: none;
   transition: 0.5s;
 }
-body .Frame .courseEditFrame .inputFrame .deleteStudent:hover {
+body .Frame .studentEditFrame .inputFrame .deleteStudent:hover {
   background-color: #f1c480;
   color: black;
 }
-body .Frame .courseEditFrame .inputFrame .deleteStudent:active {
+body .Frame .studentEditFrame .inputFrame .deleteStudent:active {
   scale: 0.85;
 }
-body .Frame .courseEditFrame .commitEdit {
+body .Frame .studentEditFrame .administrator {
+  margin: auto;
+  width: 30%;
+}
+body .Frame .studentEditFrame .commitEdit {
   position: absolute;
   bottom: 2vh;
   left: 0;
@@ -11101,10 +11107,10 @@ body .Frame .courseEditFrame .commitEdit {
   border: none;
   transition: 0.5s;
 }
-body .Frame .courseEditFrame .commitEdit:hover {
+body .Frame .studentEditFrame .commitEdit:hover {
   background-color: #f1c480;
   color: black;
 }
-body .Frame .courseEditFrame .commitEdit:active {
+body .Frame .studentEditFrame .commitEdit:active {
   scale: 0.85;
 }/*# sourceMappingURL=style.css.map */

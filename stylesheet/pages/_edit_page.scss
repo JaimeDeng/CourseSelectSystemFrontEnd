@@ -28,9 +28,10 @@ body{
         box-shadow: 0px 0px 30px gray;
     
         .logoFrame{
-            width: max-content;
-            
+            display: inline-block;
+
             i{
+                float: left;
                 color: #ffffff;
                 margin-top: 3vh;
                 margin-left: 3vh;
@@ -38,10 +39,12 @@ body{
                 text-decoration: none;
             }
             h2{
+                float: left;
                 color: #ffffff;
                 font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
                 margin-left: 1vw;
-                display: inline-block;
                 text-decoration: none;
             }
         }
@@ -79,6 +82,15 @@ body{
         }
     }
 
+    .spinner{
+        position: absolute;
+        width: 4rem;
+        height: 4rem;
+        top: 50%;
+        margin-top: -2rem;
+        left: 50%;
+        margin-left: -2rem;
+    }
 
     .Frame{
         display: flex;
@@ -95,8 +107,9 @@ body{
         border-radius: 20px;
         transition: 0.5s;
         overflow: hidden;
+        visibility: hidden;
         &:hover{
-            scale: 1.01;
+            scale: 1.005;
         }
 
         .outerBtnFrame{
@@ -279,6 +292,23 @@ body{
             }
             .credit{
                 margin-left: 1vw;
+            }
+            .seletedCourse{
+                width: 8vw;
+                height: 30px;
+                color: rgb(89, 62, 14);
+                background-color: $selector-color;
+                border-radius: $buttonBorderRadius;
+                border: none;
+                transition: 0.5s;
+    
+                &:hover{
+                    background-color: $bottonHoverColor;
+                    color: rgb(120, 85, 23);
+                }
+                &:active{
+                    scale: 0.85;
+                }           
             }
         }
     }

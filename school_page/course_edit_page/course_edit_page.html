@@ -11,18 +11,18 @@
     <body>
         <nav>
 
-          <a href="/home_page/home_page.html">
-            <div class="logoFrame">
-              <i class="fa-solid fa-building-columns"></i>
-              <h2 class="navTitle">University of Nullpointerexception</h2>
-            </div>
-          </a>
+            <a href="/home_page/home_page.html">
+              <div class="logoFrame">
+                <i class="fa-solid fa-building-columns"></i>
+                <h2 class="navTitle">University of Nullpointerexception</h2>
+              </div>
+            </a>
     
             <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
-                <ol class="breadcrumb">
-                  <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
-                  <li class="breadcrumb-item logout"><a href="#">登出</a></li>
-                </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item employee"><a id="employee" href="#">Name</a></li>
+                <li class="breadcrumb-item logout"><a id="logout" href="#">登出</a></li>
+              </ol>
             </div>
     
         </nav>
@@ -85,63 +85,23 @@
                         <div id="flush-collapse4" class="accordion-collapse collapse" data-bs-parent="#accordionFlush">
                           <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
                         </div>
-                      </div>
+                    </div>
+                    
+                  </div>  <!-- accordionEnd -->
 
-                  </div>  <!--accordionEnd-->
-
-                </div>  <!--frameEnd-->
+                </div>   <!-- frameEnd -->
 
             </div>
 
             <div class="rounded-4 courseEditFrame">
               
-              <h2 class="courseEditTitle">修改課程資訊</h2>
-              <h2 class="selectedEditcourse" id="selectedEditCourse">尚未選取欲修改課程</h2>
-
-              <div class="inputFrame" id="inputFrame">
-
-                <label for="courseIdInput">課程代碼</label>
-                <input type="text" class="input courseId" id="courseIdInput" disabled>
-
-                <label for="courseNameInput">課程名稱</label>
-                <input type="text" class="input courseName" id="courseNameInput" disabled>
-
-                <label for="lessonDayInput">上課日</label>
-                <select name="lessonDaySelect" class="form-select lessonDaySelect" id="lessonDaySelect" disabled>
-                  <option value="monday">星期一</option>
-                  <option value="tuesday">星期二</option>
-                  <option value="wednesday">星期三</option>
-                  <option value="thursday">星期四</option>
-                  <option value="friday">星期五</option>
-                  <option value="saturday">星期六</option>
-                  <option value="sunday">星期日</option>
-                </select>
-
-                <label for="startTimeInputHour">上課時間</label>
-                <div class="ms-auto me-auto startTimeFrame">
-                  <input type="text" class="input startTimeHour" id="startTimeInputHour" disabled>
-                  <h4>:</h4>
-                  <input type="text" class="input startTimeMinute" id="startTimeInputMinute" disabled>
-                </div>
-
-                <label for="endTimeInputHour">下課時間</label>
-                <div class="ms-auto me-auto endTimeFrame">
-                  <input type="text" class="input endTimeHour" id="endTimeInputHour" disabled>
-                  <h4>:</h4>
-                  <input type="text" class="input endTimeMinute" id="endTimeInputMinute" disabled>
-                </div>
-
-                <label for="creditInput">學分數</label>
-                <input type="text" class="input credit" id="creditInput" disabled>
-
-                <label for="selectLimitInput">選課人數上限</label>
-                <input type="text" class="input selectLimit" id="selectLimitInput" disabled>
-
-                <button type="button" class="deleteCourse" id="deleteCourse">刪除該課程</button>
-
+              <h2 class="courseEditTitle">操作選單</h2>
+            
+              <div class="editBtnFrame">
+                <button type="button" class="addCourse" id="addCourse">&nbsp新增課程資訊&nbsp&nbsp&nbsp<i class="fa-solid fa-plus"></i></button>
+                <button type="button" class="editCourse" id="editCourse">&nbsp修改課程資訊&nbsp&nbsp&nbsp<i class="fa-solid fa-pen-to-square"></i></button>
+                <button type="button" class="selectListEdit" id="selectListEdit">&nbsp選課名單編輯&nbsp&nbsp&nbsp<i class="fa-solid fa-pen-to-square"></i></button>
               </div>
-
-              <button type="button" class="commitEdit" id="commitEdit">送出修改</button>
 
             </div>
 

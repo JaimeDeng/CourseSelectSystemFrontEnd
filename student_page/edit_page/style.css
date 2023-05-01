@@ -10843,10 +10843,10 @@ body nav {
   box-shadow: 0px 0px 30px gray;
 }
 body nav .logoFrame {
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
 }
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,10 +10854,12 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
 body nav .breadcrumb {
@@ -10887,6 +10889,15 @@ body nav .breadcrumb .logout a {
 body nav .breadcrumb .logout a:hover {
   color: #FCA311;
 }
+body .spinner {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  margin-top: -2rem;
+  left: 50%;
+  margin-left: -2rem;
+}
 body .Frame {
   display: flex;
   position: relative;
@@ -10902,9 +10913,10 @@ body .Frame {
   border-radius: 20px;
   transition: 0.5s;
   overflow: hidden;
+  visibility: hidden;
 }
 body .Frame:hover {
-  scale: 1.01;
+  scale: 1.005;
 }
 body .Frame .outerBtnFrame {
   display: flex;
@@ -11072,4 +11084,20 @@ body .Frame .infoFrame .name {
 }
 body .Frame .infoFrame .credit {
   margin-left: 1vw;
+}
+body .Frame .infoFrame .seletedCourse {
+  width: 8vw;
+  height: 30px;
+  color: rgb(89, 62, 14);
+  background-color: #FCA311;
+  border-radius: 3px;
+  border: none;
+  transition: 0.5s;
+}
+body .Frame .infoFrame .seletedCourse:hover {
+  background-color: #f1c480;
+  color: rgb(120, 85, 23);
+}
+body .Frame .infoFrame .seletedCourse:active {
+  scale: 0.85;
 }/*# sourceMappingURL=style.css.map */

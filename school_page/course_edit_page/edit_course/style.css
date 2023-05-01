@@ -10843,10 +10843,10 @@ body nav {
   box-shadow: 0px 0px 30px gray;
 }
 body nav .logoFrame {
-  width: -moz-max-content;
-  width: max-content;
+  display: inline-block;
 }
 body nav .logoFrame i {
+  float: left;
   color: #ffffff;
   margin-top: 3vh;
   margin-left: 3vh;
@@ -10854,10 +10854,12 @@ body nav .logoFrame i {
   text-decoration: none;
 }
 body nav .logoFrame h2, body nav .logoFrame .h2 {
+  float: left;
   color: #ffffff;
   font-family: Californain FB;
+  margin-top: 3vh;
+  margin-left: 3vh;
   margin-left: 1vw;
-  display: inline-block;
   text-decoration: none;
 }
 body nav .breadcrumb {
@@ -10868,13 +10870,13 @@ body nav .breadcrumb {
   right: 20px;
   top: 40%;
 }
-body nav .breadcrumb .student a {
+body nav .breadcrumb .employee a {
   font-size: 18px;
   font-weight: 600;
   color: white;
   text-decoration: none;
 }
-body nav .breadcrumb .student a:hover {
+body nav .breadcrumb .employee a:hover {
   color: #FCA311;
 }
 body nav .breadcrumb .logout a {
@@ -10985,7 +10987,30 @@ body .Frame .infoFrame .accordionFrame {
 body .Frame .infoFrame .accordionFrame .accordion-flush {
   width: 100%;
 }
-body .Frame .selectCourseFrame {
+body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body {
+  position: relative;
+}
+body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body .addBtn {
+  position: absolute;
+  right: 1vw;
+  bottom: 40%;
+  margin: auto;
+  width: 4vw;
+  height: 30px;
+  color: white;
+  background-color: #14213d;
+  border-radius: 3px;
+  border: none;
+  transition: 0.5s;
+}
+body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body .addBtn:hover {
+  background-color: #f1c480;
+  color: black;
+}
+body .Frame .infoFrame .accordionFrame .accordion-flush .accordion-body .addBtn:active {
+  scale: 0.85;
+}
+body .Frame .courseEditFrame {
   position: absolute;
   height: 90%;
   width: 35%;
@@ -10993,36 +11018,108 @@ body .Frame .selectCourseFrame {
   top: 2%;
   right: 2%;
 }
-body .Frame .selectCourseFrame .selectTitle {
+body .Frame .courseEditFrame .courseEditTitle {
+  display: inline-block;
   margin-top: 20px;
   margin-left: 2%;
 }
-body .Frame .selectCourseFrame .card {
-  width: 80%;
-  position: relative;
-}
-body .Frame .selectCourseFrame .card button {
-  display: inline-block;
-  position: absolute;
-  top: 10%;
-  right: 2%;
+body .Frame .courseEditFrame .selectedEditcourse {
+  font-size: 24px;
   width: -moz-max-content;
   width: max-content;
-  height: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2px;
+  margin-bottom: 1vh;
+  padding: 3px;
+  background-color: #f1c480;
+  border: 1px solid #cb9645;
+  border-radius: 10px;
+}
+body .Frame .courseEditFrame .inputFrame {
+  margin: auto;
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+}
+body .Frame .courseEditFrame .inputFrame label {
+  margin: auto;
+}
+body .Frame .courseEditFrame .inputFrame .lessonDaySelect {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vh;
+  width: 30%;
+}
+body .Frame .courseEditFrame .inputFrame .lessonDaySelect:hover {
+  scale: 1.01;
+}
+body .Frame .courseEditFrame .inputFrame .lessonDaySelect:focus {
+  background-color: #f1c480;
+}
+body .Frame .courseEditFrame .inputFrame .lessonDaySelect:disabled {
+  background-color: rgb(190, 188, 187);
+}
+body .Frame .courseEditFrame .inputFrame .input {
+  border-radius: 6px;
+  border: none;
+  padding: 2px 6px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1vh;
+  height: 30px;
+  width: 80%;
+  transition: 0.4s;
+}
+body .Frame .courseEditFrame .inputFrame .input:hover {
+  scale: 1.01;
+}
+body .Frame .courseEditFrame .inputFrame .input:focus {
+  background-color: #f1c480;
+}
+body .Frame .courseEditFrame .inputFrame .input:disabled {
+  background-color: rgb(190, 188, 187);
+}
+body .Frame .courseEditFrame .inputFrame .credit, body .Frame .courseEditFrame .inputFrame .selectLimit {
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+}
+body .Frame .courseEditFrame .inputFrame .startTimeFrame {
+  display: flex;
+  width: 60%;
+}
+body .Frame .courseEditFrame .inputFrame .startTimeFrame .startTimeHour, body .Frame .courseEditFrame .inputFrame .startTimeFrame .startTimeMinute {
+  height: 30px;
+  width: 30%;
+}
+body .Frame .courseEditFrame .inputFrame .endTimeFrame {
+  display: flex;
+  width: 60%;
+}
+body .Frame .courseEditFrame .inputFrame .endTimeFrame .endTimeHour, body .Frame .courseEditFrame .inputFrame .endTimeFrame .endTimeMinute {
+  height: 30px;
+  width: 30%;
+}
+body .Frame .courseEditFrame .inputFrame .deleteCourse {
+  font-size: 14px;
+  margin: auto;
+  width: 5vw;
+  height: 30px;
   color: white;
-  background-color: #14213d;
-  border-radius: 16px;
+  background-color: rgb(109, 34, 34);
+  border-radius: 3px;
   border: none;
   transition: 0.5s;
 }
-body .Frame .selectCourseFrame .card button:hover {
+body .Frame .courseEditFrame .inputFrame .deleteCourse:hover {
   background-color: #f1c480;
   color: black;
 }
-body .Frame .selectCourseFrame .card button:active {
+body .Frame .courseEditFrame .inputFrame .deleteCourse:active {
   scale: 0.85;
 }
-body .Frame .selectCourseFrame .commitSelect {
+body .Frame .courseEditFrame .commitEdit {
   position: absolute;
   bottom: 2vh;
   left: 0;
@@ -11036,10 +11133,10 @@ body .Frame .selectCourseFrame .commitSelect {
   border: none;
   transition: 0.5s;
 }
-body .Frame .selectCourseFrame .commitSelect:hover {
+body .Frame .courseEditFrame .commitEdit:hover {
   background-color: #f1c480;
   color: black;
 }
-body .Frame .selectCourseFrame .commitSelect:active {
+body .Frame .courseEditFrame .commitEdit:active {
   scale: 0.85;
 }/*# sourceMappingURL=style.css.map */

@@ -10,26 +10,28 @@
 </head>
 <body>
 
-    <a href="/home_page/home_page.html">
-        <div class="logoFrame">
-          <i class="fa-solid fa-building-columns"></i>
-          <h2 class="navTitle">University of Nullpointerexception</h2>
-        </div>
-    </a>
+    <nav>
+        <a href="/home_page/home_page.html">
+            <div class="logoFrame">
+              <i class="fa-solid fa-building-columns"></i>
+              <h2 class="navTitle">University of Nullpointerexception</h2>
+            </div>
+        </a>
+    </nav>
 
     <main>
         
         <!--login title-->
         <div class="loginTitle">
-            <h1>Student Login</h1>
+            <h1>Login</h1>
         </div>
 
         <!-- login frame -->
         <div class="loginFrame">
 
-            <!-- email -->
+            <!-- id -->
             <div class="idFrame">
-                <label for = "studentId">Student ID</label>
+                <label for = "studentId">ID</label>
                 <i class="fa-solid fa-user"></i>
                 <input id = "studentId" class="studentId" type="text" placeholder="請輸入您的學號"/>
                 <i class="fa-regular fa-circle-question"></i>
@@ -53,10 +55,11 @@
 
         <!-- login button -->
         <div class="loginBtnFrame">
-                <button type="button" class="loginBtn">Log In</button>
+                <button type="button" class="loginBtn" id="loginBtn">Log In</button>
         </div>
 
     </main>
     
+    <script src="main.js"></script>
 </body>
 </html>

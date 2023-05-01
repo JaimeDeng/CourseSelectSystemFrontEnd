@@ -20,8 +20,8 @@
 
         <div style="--bs-breadcrumb-divider: '|';" aria-label="breadcrumb" class="breadcrumb">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item student"><a id="student" href="#">Name</a></li>
-            <li class="breadcrumb-item logout"><a href="#">登出</a></li>
+            <li class="breadcrumb-item employee"><a id="employee" href="#">Name</a></li>
+            <li class="breadcrumb-item logout"><a id="logout" href="#">登出</a></li>
           </ol>
         </div>
 
@@ -93,9 +93,9 @@
 
         </div>
 
-        <div class="rounded-4 courseEditFrame">
+        <div class="rounded-4 studentEditFrame">
           
-          <h2 class="courseEditTitle">修改學生資訊</h2>
+          <h2 class="studentEditTitle">修改學生資訊</h2>
           <h2 class="selectedEditStudent" id="selectedEditStudent">尚未選取欲編輯的學生資訊</h2>
 
           <div class="inputFrame" id="inputFrame">
@@ -111,6 +111,12 @@
 
             <label for="credit">學分</label>
             <input type="text" class="input credit" id="credit" disabled>
+
+            <label for="administrator">職員權限</label>
+            <select name="administrator" class="form-select administrator" id="administrator" disabled>
+              <option value="false">否</option>
+              <option value="true">是</option>
+          </select>
 
             <button type="button" class="deleteStudent" id="deleteStudent">刪除該學生資訊</button>
 

@@ -26,11 +26,12 @@ body{
         background-color: $nav-color;
         position: relative;
         box-shadow: 0px 0px 30px gray;
-    
+
         .logoFrame{
-            width: max-content;
-            
+            display: inline-block;
+
             i{
+                float: left;
                 color: #ffffff;
                 margin-top: 3vh;
                 margin-left: 3vh;
@@ -38,10 +39,12 @@ body{
                 text-decoration: none;
             }
             h2{
+                float: left;
                 color: #ffffff;
                 font-family: Californain FB;
+                margin-top: 3vh;
+                margin-left: 3vh;
                 margin-left: 1vw;
-                display: inline-block;
                 text-decoration: none;
             }
         }
@@ -53,7 +56,7 @@ body{
             right: 20px;
             top: 40%;
 
-            .student{
+            .employee{
                 a{
                     font-size: 18px;
                     font-weight: 600;
@@ -125,7 +128,6 @@ body{
                 }
             }
         }
-            
 
         .infoFrame{
             position: absolute;
@@ -134,6 +136,7 @@ body{
             background-color: rgba(236, 236, 236, 1);
             top: 2%;
             left: 2%;
+            overflow: hidden;
             
             .titleAndSearch{
                 position: relative;
@@ -177,30 +180,6 @@ body{
                 height: 85%;
                 .accordion-flush{
                     width: 100%;
-                    .accordion-body{
-                        position: relative;
-                        .addBtn{
-                            position: absolute;
-                            right: 1vw;
-                            bottom: 40%;
-                            margin: auto;
-                            width: 4vw;
-                            height: 30px;
-                            color: white;
-                            background-color: $nav-color;
-                            border-radius: $buttonBorderRadius;
-                            border: none;
-                            transition: 0.5s;
-                
-                            &:hover{
-                                background-color: $bottonHoverColor;
-                                color: black;
-                            }
-                            &:active{
-                                scale: 0.85;
-                            }
-                        }     
-                    }
                 }
             }
         }
@@ -217,129 +196,65 @@ body{
                 margin-top: 20px;
                 margin-left: 2%;
             }
-            .selectedEditcourse{
-                font-size: 24px;
-                width: max-content;
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 2px;
-                margin-bottom: 1vh;
-                padding: 3px;
-                background-color: #f1c480;
-                border: 1px solid #cb9645;
-                border-radius: 10px;
-            }
 
-            .inputFrame{
+            .editBtnFrame{
+                position: relative;
                 margin: auto;
+                margin-top: 1vh;
                 display: flex;
-                width: 60%;
+                height: 80%;
+                width: 80%;
                 flex-direction: column;
-                label{
-                    margin: auto;
-                }
-                .lessonDaySelect{
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-bottom: 1vh;
-                    width: 30%;
-                    &:hover{
-                        scale: 1.01;
-                    }
-                    &:focus{
-                        background-color: #f1c480;
-                    }
-                    &:disabled{
-                        background-color: rgb(190, 188, 187);
-                    }
-                }
-                .input{
-                    border-radius: 6px;
-                    border: none;
-                    padding: 2px 6px;
-                    margin-left: auto;
-                    margin-right: auto;
-                    margin-bottom: 1vh;
-                    height: 30px;
-                    width: 80%;
-                    transition: 0.4s;
-                    &:hover{
-                        scale: 1.01;
-                    }
-                    &:focus{
-                        background-color: #f1c480;
-                    }
-                    &:disabled{
-                        background-color: rgb(190, 188, 187);
-                    }
-                }
-                .credit , .selectLimit{
-                    margin-left: auto;
-                    margin-right: auto;
-                    width: 20%;
-                }
-                .startTimeFrame{
-                    display: flex;
-                    width: 60%;
-                    .startTimeHour , .startTimeMinute{
-                        height: 30px;
-                        width: 30%;
-                    }
-                }
-                .endTimeFrame{
-                    display: flex;
-                    width: 60%;
-                    .endTimeHour , .endTimeMinute{
-                        height: 30px;
-                        width: 30%;
-                    }
-                }
 
-                .deleteCourse{
-                    font-size: 14px;
+                %button-setting{
+                    position: relative;
                     margin: auto;
-                    width: 5vw;
-                    height: 30px;
-                    color: white;
-                    background-color: rgb(109, 34, 34);
-                    border-radius: $buttonBorderRadius;
-                    border: none;
-                    transition: 0.5s;
-        
+                    width: 100%;
+                    height: 10vh;
+                    border: 1px solid rgb(82, 82, 82);
+                    background-color: white;
+                    border-radius: 10px;
+                    transition: 0.4s;
+                    font-weight: 600;
+                    overflow: hidden;
+                    z-index: 1;     //按鈕提高 , 讓按鈕文字不會被偽元素擋住
+                    &::before{
+                        content: "";
+                        height: 100%;
+                        width: 200%;
+                        position: absolute;
+                        top: 0;
+                        left: -200%;
+                        background-color: $nav-color;
+                        transform: skewX(45deg);    //傾斜元素的角度
+                        transition: 0.4s ease;
+                        z-index: -1;    //偽元素降低 , 讓按鈕文字不會被偽元素擋住
+                    }
                     &:hover{
-                        background-color: $bottonHoverColor;
-                        color: black;
+                        background-color: $selector-color;
+                        color: white;
+                    }
+                    &:hover::before{
+                        left: -30%;
                     }
                     &:active{
-                        scale: 0.85;
+                        scale: 0.95;
                     }
-                    
+                    &:active::before{
+                        background-color: #475880;
+                    }
+                }
+                .addCourse{
+                    @extend %button-setting;
+                }
+                .editCourse{
+                    @extend %button-setting;
+                }
+                .selectListEdit{
+                    @extend %button-setting;
                 }
             }
 
-            .commitEdit{
-                position: absolute;
-                bottom: 2vh;
-                left: 0;
-                right: 0;
-                margin: auto;
-                width: 8vw;
-                height: 30px;
-                color: white;
-                background-color: $nav-color;
-                border-radius: $buttonBorderRadius;
-                border: none;
-                transition: 0.5s;
-    
-                &:hover{
-                    background-color: $bottonHoverColor;
-                    color: black;
-                }
-                &:active{
-                    scale: 0.85;
-                }
-            }
-        }
-        
+        }   
     }
 }
