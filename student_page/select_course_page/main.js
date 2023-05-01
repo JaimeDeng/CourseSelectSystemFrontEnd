@@ -19,17 +19,36 @@ backBtn.addEventListener("click" , ()=>{
 });
 
 removeAllSelect.addEventListener("click" , ()=> {
-    indexList = [];
+    courseIdList = [];
     cardFrame.innerHTML = "";
 })
 
+//elements
+let courseData = [];
+let accordionFlush = document.getElementById("accordionFlush");
+let courseIdList = [];  //記錄在選課列表中的課程ID
+let valueList = [];
+let cardList = [];
+let allCardElement = [];
+let cardFrame = document.getElementById("cardFrame");
+let student = document.getElementById("student");
+let logout = document.getElementById("logout");
+let accountId;
+let selectCourseResData = [];
+
+logout.addEventListener("click" , ()=>{
+    sessionStorage.removeItem("accountSession");
+    localStorage.removeItem("accountLocal");
+    window.location.href = "../../home_page/home_page.html";
+});
+
+student.addEventListener("click" , ()=>{
+    window.location.href = "../edit_page/edit_page.html";
+});
+
 commitSelect.addEventListener("click" , ()=> {
     //建構reqBody
-    let selectCourseList = []
-    indexList.forEach((element) => {
-        selectCourseList.push(courseData.courseInfoList[element].courseId);
-    })
-    let selectCourseListReq = new selectCourseListReqObj(accountId , selectCourseList);
+    let selectCourseListReq = new selectCourseListReqObj(accountId , courseIdList);
     console.log(selectCourseListReq);
             
     fetch("http://localhost:3000/api/selectCourse", {
@@ -64,29 +83,6 @@ commitSelect.addEventListener("click" , ()=> {
     })
     .catch(err => console.log(err))
 })
-
-//elements
-let courseData = [];
-let accordionFlush = document.getElementById("accordionFlush");
-let indexList = [];
-let valueList = [];
-let cardList = [];
-let allCardElement = [];
-let cardFrame = document.getElementById("cardFrame");
-let student = document.getElementById("student");
-let logout = document.getElementById("logout");
-let accountId;
-let selectCourseResData = [];
-
-logout.addEventListener("click" , ()=>{
-    sessionStorage.removeItem("accountSession");
-    localStorage.removeItem("accountLocal");
-    window.location.href = "../../home_page/home_page.html";
-});
-
-student.addEventListener("click" , ()=>{
-    window.location.href = "../edit_page/edit_page.html";
-});
 
 //開啟畫面時檢查storage有無account資訊
 document.addEventListener("DOMContentLoaded" , ()=>{
@@ -125,10 +121,11 @@ function loadCourseInfo() {
     }else{
         //生成index與課程資料list一致的按鈕陣列
         courseData.courseInfoList.forEach((element , index)=>{
+            let courseId = element.courseId;
             //生成準備放到列表中的addBtn
-            addBtnList.push("<button value=\"" + index + "\" class=\"addBtn addBtn" + (index+1) + "\" id=\"addBtn addBtn" + (index+1) + "\">加入選課列表</button>")
+            addBtnList.push("<button value=\"" + courseId + "\" class=\"addBtn addBtn" + (courseId) + "\" id=\"addBtn addBtn" + (courseId) + "\">加入選課列表</button>")
             //生成準備放到列表中的selectBtn
-            selectBtnList.push("<button value=\"" + index + "\" class=\"selectBtn selectBtn" + (index+1) + "\" id=\"selectBtn selectBtn" + (index+1) + "\">選課</button>")
+            selectBtnList.push("<button value=\"" + courseId + "\" class=\"selectBtn selectBtn" + (courseId) + "\" id=\"selectBtn selectBtn" + (courseId) + "\">選課</button>")
         })
 
         //生成列表 & 把按鈕添加進資訊欄中
@@ -156,38 +153,39 @@ function addBtnEventListener() {
 
     //設定addBtn
     courseData.courseInfoList.forEach((element , index) => {
+        let courseId = element.courseId;
         addBtnElementList[index].addEventListener("click" , () => {
             cardFrame.innerHTML = "";
-            if(indexList.includes(index)){
+            if(courseIdList.includes(courseId)){
                 window.alert("選課列表中已有該課程!")
             }else{
-                indexList.push(index);        
+                courseIdList.push(courseId);
             }
-            indexList.forEach((indexListElement , indexListIndex)=>{
-                let courseId = courseData.courseInfoList[indexListElement].courseId;
-                let courseName = courseData.courseInfoList[indexListElement].courseName;
-                let removeBtn = `<button value="${indexListElement}" class="ps-1 pe-1 remove remove${indexListIndex+1}" id="remove remove${indexListIndex+1}">移除</button>`;
+            courseIdList.forEach((courseIdListElement , courseIdListIndex)=>{
+                let courseName;
+                //比對courseIdList內的Id , 把該Id的課程名稱抓出來
+                courseData.courseInfoList.forEach((innerElement)=>{
+
+                    if(innerElement.courseId === courseIdListElement){
+                        courseName = innerElement.courseName;
+                    }
+                    
+                })
+
+                let removeBtn = `<button value="${courseIdListElement}" class="ps-1 pe-1 remove remove${courseIdListElement}" id="remove remove${courseIdListElement}">移除</button>`;
                 if(!removeBtnList.includes(removeBtn)){
                     removeBtnList.push(removeBtn);
                 }
-                cardFrame.innerHTML += `<div data-value="${index}" class="card mb-2 ms-auto me-auto p-2  pe-5 rounded-3 text-center selectCourse${index}">${courseId}&nbsp${courseName}${removeBtnList[indexListIndex]}</div>`;
+                cardFrame.innerHTML += `<div data-value="${courseIdListElement}" class="card mb-2 ms-auto me-auto p-2  pe-5 rounded-3 text-center selectCourse${courseIdListElement}">${courseIdListElement}&nbsp${courseName}${removeBtnList[courseIdListIndex]}</div>`;
                 allCardElement = cardFrame.querySelectorAll(".card");
                 removeBtnElementList = cardFrame.querySelectorAll(".remove");
-                cardList.push(indexListElement);
+                cardList.push(courseIdListElement);
+
+                removeBtnEventListener();
             })
         })
     })
 }
-
-cardList = new Proxy(cardList , {
-    set(target, property, value) {
-        Reflect.set(target, property, value);
-        console.log(`Array element ${property} was set to ${value}`);
-        removeBtnEventListener();
-        return true;
-    }
-})
-
 
 //設定removeBtn
 function removeBtnEventListener() {
@@ -195,25 +193,53 @@ function removeBtnEventListener() {
     //將removeBtnElementList依序添加按鈕功能
     console.log(removeBtnElementList);
     console.log(allCardElement);
-    removeBtnElementList.forEach((removeBtnElement , removeBtnIndex) => {
-        removeBtnElement.addEventListener("click" , () => {
+    let newAllCardElement = allCardElement;
+    allCardElement.forEach((cardElement , cardIndex) => {
+        cardElement.addEventListener("click" , (event) => {
+            //如果event 的target(執行對象) 的tagName(HTML標籤名稱) 是BUTTON(按鈕)
+            if (event.target.tagName === 'BUTTON') {
 
-            allCardElement[removeBtnIndex].remove();
-            allCardElement = cardFrame.querySelectorAll(".card");
+                //就獲取這顆按鈕的.parentNode(父元素DOM).dataset.value(Data-value)
+                const cardValue = event.target.parentNode.dataset.value;
+                console.log(cardValue)
+                let courseId = cardValue;
 
-            // let newCardList = cardList;
-            // cardList.forEach((cardListElement , cardListIndex) => {
-            //     if(removeBtnElement.value === cardListElement){
-            //         newCardList.splice(cardListIndex , 1); //splice(從指定位置開始刪除元素 , 要刪除的元素數量)
-            //         allCardElement[cardListIndex].remove();
-            //     }
-            // })
-            // cardList = newCardList;
-            
-            // console.log("cardList:" + cardList);
+                //對照courseIdList與按下的按鈕的value並修改courseIdList
+                let newCourseIdList = courseIdList;
+                courseIdList.forEach((courseIdListElement , courseIdListIndex) => {
+                    if(courseIdListElement === courseId){
+                        newCourseIdList.splice(courseIdListIndex , 1);
+                    }
+                })
+                courseIdList = newCourseIdList;
 
-            // console.log("這個value是" + allCardElement[removeBtnIndex].dataset.value);
-            
+                console.log(courseIdList)
+
+                //更新cardFrame
+                cardFrame.innerHTML = "";
+                courseIdList.forEach((courseIdListElement , courseIdListIndex)=>{
+                    let courseName;
+                    //比對courseIdList內的Id , 把該Id的課程名稱抓出來
+                    courseData.courseInfoList.forEach((innerElement)=>{
+    
+                        if(innerElement.courseId === courseIdListElement){
+                            courseName = innerElement.courseName;
+                        }
+                        
+                    })
+    
+                    let removeBtn = `<button value="${courseIdListElement}" class="ps-1 pe-1 remove remove${courseIdListElement}" id="remove remove${courseIdListElement}">移除</button>`;
+                    if(!removeBtnList.includes(removeBtn)){
+                        removeBtnList.push(removeBtn);
+                    }
+                    cardFrame.innerHTML += `<div data-value="${courseIdListElement}" class="card mb-2 ms-auto me-auto p-2  pe-5 rounded-3 text-center selectCourse${courseIdListElement}">${courseIdListElement}&nbsp${courseName}${removeBtnList[courseIdListIndex]}</div>`;
+                    allCardElement = cardFrame.querySelectorAll(".card");
+                    removeBtnElementList = cardFrame.querySelectorAll(".remove");
+                    cardList.push(courseIdListElement);
+    
+                    removeBtnEventListener();
+                })
+            }
         })
     })
 }
